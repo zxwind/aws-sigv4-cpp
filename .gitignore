@@ -19,10 +19,12 @@
 # Compiled Static libraries
 *.lai
 *.la
-*.a
+#*.a
 *.lib
 
 # Executables
 *.exe
 *.out
 *.app
+
+*test_executable
