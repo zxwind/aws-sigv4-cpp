@@ -1,5 +1,7 @@
 #include "awssigv4.h"
 
+#include <cctype>
+
 namespace aws_sigv4 {
 
     // Helper function for trim string
