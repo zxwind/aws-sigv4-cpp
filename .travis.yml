@@ -1,6 +1,6 @@
 language: cpp
 compiler:
   - gcc
+before_install: cd tests
 install: make get-googletest
-before_script: cd tests
 script: make && make test
