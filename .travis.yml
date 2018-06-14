@@ -2,4 +2,5 @@ language: cpp
 compiler:
   - gcc
 install: make get-googletest
+before_script: cd tests
 script: make && make test
