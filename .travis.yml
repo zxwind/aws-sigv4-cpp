@@ -2,7 +2,7 @@ language: cpp
 compiler:
   - gcc
 before_install:
-  - sudo apt-get install openssl libssl-dev
+  - sudo apt-get install libcrypto++-dev
   - cd tests
 install: make get-googletest
 script: make && make test
