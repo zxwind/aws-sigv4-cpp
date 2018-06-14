@@ -1,0 +1,5 @@
+language: cpp
+compiler:
+  - gcc
+install: make get-googletest
+script: make && make test
