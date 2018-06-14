@@ -10,4 +10,5 @@ script:
   - dpkg -l | grep ssl
   - dpkg-query -L libssl1.0.0
   - dpkg-query -L openssl
+  - g++ -v
   - make && make test
