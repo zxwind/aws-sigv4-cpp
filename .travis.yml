@@ -6,4 +6,8 @@ before_install:
   - sudo apt-get install libcrypto++-dev libssl-dev
   - cd tests
 install: make get-googletest
-script: make && make test
+script:
+  - dpkg -l | grep ssl
+  - dpkg-query -L libssl1.0.0
+  - dpkg-query -L openssl
+  - make && make test
