@@ -1,6 +1,8 @@
 language: cpp
 compiler:
   - gcc
-before_install: cd tests
+before_install:
+  - sudo apt-get install libssl-dev
+  - cd tests
 install: make get-googletest
 script: make && make test
