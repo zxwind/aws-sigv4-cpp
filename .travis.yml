@@ -7,10 +7,4 @@ before_install:
   - cd tests
 install: make get-googletest
 script:
-  - dpkg -l | grep ssl
-  - dpkg-query -L libssl1.0.0
-  - dpkg-query -L openssl
-  - g++ -v
   - make && make test
-env:
-  - LD_LIBRARY_PATH=/lib/x86_64-linux-gnu
