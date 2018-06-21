@@ -19,7 +19,7 @@
 # Compiled Static libraries
 *.lai
 *.la
-#*.a
+*.a
 *.lib
 
 # Executables
@@ -27,4 +27,6 @@
 *.out
 *.app
 
-*test_executable
+tests/unittest
+
+tests/googletest-release*

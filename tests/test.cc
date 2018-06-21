@@ -746,11 +746,3 @@ TEST(createAuthorizationHeader, post_x_www_form_urlencoded_parameters)
 
     EXPECT_EQ(authorization_header, GetWholeFile("aws4_testsuite/post-x-www-form-urlencoded-parameters.authz"));
 }
-
-
-int main(int argc, char **argv)
-{
-    ::testing::InitGoogleTest(&argc, argv);
-
-    return RUN_ALL_TESTS();
-}
