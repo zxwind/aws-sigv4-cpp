@@ -1,18 +1,24 @@
 #include "awssigv4.h"
 
+#include <cctype>
+
 namespace aws_sigv4 {
 
     // Helper function for trim string
     // trim from start
     static inline std::string &ltrim(std::string &s) {
-            s.erase(s.begin(), std::find_if(s.begin(), s.end(), std::not1(std::ptr_fun<int, int>(std::isspace))));
-            return s;
+        s.erase(s.begin(), std::find_if(s.begin(), s.end(), [](int c) {
+            return !std::isspace(c);
+        }));
+        return s;
     }
 
     // trim from end
     static inline std::string &rtrim(std::string &s) {
-            s.erase(std::find_if(s.rbegin(), s.rend(), std::not1(std::ptr_fun<int, int>(std::isspace))).base(), s.end());
-            return s;
+        s.erase(std::find_if(s.rbegin(), s.rend(), [](int c) {
+            return !std::isspace(c);
+        }).base(), s.end());
+        return s;
     }
 
     // trim from both ends
@@ -58,7 +64,7 @@ namespace aws_sigv4 {
             outputBuffer[i] = hash[i];
         }
 
-        delete c_string;
+        delete[] c_string;
     }
 
     const std::string Signature::hexlify(const unsigned char* digest) {
