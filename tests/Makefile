@@ -64,4 +64,4 @@ gtest_main.a : gtest-all.o gtest_main.o
 # gtest_main.a, depending on whether it defines its own main()
 # function.
 unittest : gtest_main.a $(USER_DIR)/tests/test.cc $(USER_DIR)/awssigv4.cc
-	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -I$(USER_DIR) -lpthread -lcrypto $^ -o $@
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -I$(USER_DIR) -lpthread $^ -o $@ -lcrypto
